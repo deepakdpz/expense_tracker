@@ -1,0 +1,36 @@
+<div class="container">
+
+    <form action="" [formGroup]="transactionForm" (ngSubmit)="createTransaction()">
+        <div class="mb-3">
+            <label for="">enter transaction title</label>
+            <input type="text" placeholder="enter title" class="form-control" formControlName="title">
+        </div>
+        <div class="mb-3">
+            <label for="">Select Transaction Type</label>
+            <select name="" id="" class="form-control form-select" formControlName="type">
+                <option value="expenses">expenses</option>
+                <option value="income">income</option>
+            </select>
+        </div> 
+        <div class="mb-3">
+            <label for="">Select Category </label>
+            <select name="" id="" class="form-control form-select" formControlName="category">
+                <option value="{{cat}}" *ngFor="let cat of categories">{{cat}}</option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <label for="">Enter amount</label>
+            <input type="text" placeholder="enter amount" class="form-control" formControlName="amount">
+        </div>
+        <div class="mb-3">
+            <label for="">Enter User</label>
+            <input type="text" placeholder="enter user" class="form-control" formControlName="user">
+        </div>
+        <div class="mb-3">
+            <button type="submit" [hidden]="isEdit">Add</button>
+            <button type="submit" [hidden]="!isEdit">Edit</button>
+        </div>
+    
+
+    </form>
+</div>
